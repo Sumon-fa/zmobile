@@ -1,44 +1,50 @@
-import React from 'react'
-import { View, Text, StyleSheet, Button } from 'react-native'
+import React from 'react';
+import {View, Text, StyleSheet, Button} from 'react-native';
 
 interface SubscriptionProps {
-  plan: string
-  monthlyCost: number
-  dataLimit: string
-  minutesLimit: number
-  messagesLimit: number
-  id: string
+  plan: string;
+  monthlyCost: number;
+  dataLimit: string;
+  minutesLimit: number;
+  messagesLimit: number;
+  id: string;
 }
 
 interface SubscriptionListProps {
-  subscriptions: SubscriptionProps[]
+  subscriptions: SubscriptionProps[];
 }
 
-const SubscriptionList = ({ subscriptions }: SubscriptionListProps) => {
+const SubscriptionList = ({subscriptions}: SubscriptionListProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
         <Text style={styles.navbarTitle}>Subscriptions</Text>
       </View>
       <View style={styles.cardContainer}>
-        {subscriptions.map((subscription) => (
+        {subscriptions.map(subscription => (
           <View key={subscription.id} style={styles.card}>
             <Text style={styles.cardTitle}>{subscription.plan}</Text>
-            <Text style={styles.cardDetails}>Data Limit: {subscription.dataLimit}</Text>
-            <Text style={styles.cardDetails}>Minutes Limit: {subscription.minutesLimit}</Text>
-            <Text style={styles.cardDetails}>Messages Limit: {subscription.messagesLimit}</Text>
+            <Text style={styles.cardDetails}>
+              Data Limit: {subscription.dataLimit}
+            </Text>
+            <Text style={styles.cardDetails}>
+              Minutes Limit: {subscription.minutesLimit}
+            </Text>
+            <Text style={styles.cardDetails}>
+              Messages Limit: {subscription.messagesLimit}
+            </Text>
             <Text style={styles.cardDetails}>
               Monthly Cost: ${subscription.monthlyCost.toFixed(2)}
             </Text>
-            <View style={{ marginTop: 12 }}>
-              <Button title='Buy' />
+            <View style={{marginTop: 12}}>
+              <Button title="Buy" />
             </View>
           </View>
         ))}
       </View>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -75,6 +81,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginBottom: 4,
   },
-})
+});
 
-export default SubscriptionList
+export default SubscriptionList;
