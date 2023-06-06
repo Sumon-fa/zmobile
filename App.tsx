@@ -7,7 +7,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchSubscriptionHandler = async () => {
+  const fetchSubscriptionHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
 
@@ -26,7 +26,7 @@ const App = () => {
       setError(error.message);
     }
     setIsLoading(false);
-  };
+  }, []);
 
   useEffect(() => {
     fetchSubscriptionHandler();
