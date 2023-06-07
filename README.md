@@ -1,6 +1,6 @@
 # ZMobile
 
-Zmobile is a mobile subscription app inspired by Moflix, a cloud based digital solution for Telecommunication companies.
+Zmobile is a mobile subscription app inspired by Moflix(a cloud based digital solution for Telecommunication companies).
 
 ## Result
 
